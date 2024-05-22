@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="POST" class="container mt-5">
+    <h1>Создание заявки</h1>
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="title" class="form-label">Заголовок</label>
+        <input type="text" class="form-control" id="title" required name="title" placeholder="Введите заголовок">
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Описание</label>
+        <input type="text" class="form-control" id="description" required name="description" placeholder="Введите описание">
+    </div>
+    <div class="mb-3">
+        <label for="set_time" class="form-label">Время</label>
+        <input type="datetime-local" class="form-control" required id="set_time" name="set_time" placeholder="Выберите время">
+    </div>
+    <button type="submit" class="btn btn-primary">Создать</button>
+</form>
+{% endblock %}
